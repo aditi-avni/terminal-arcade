@@ -1,0 +1,47 @@
+# Terminal Arcade — lint
+#
+# Beginner-facing repo, so the messages matter as much as the checks. Every
+# failure says exactly which command to run locally to fix it.
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ruff:
+    name: ruff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ruff
+        run: pip install --quiet ruff
+
+      - name: Check formatting
+        run: |
+          if ! ruff format --diff .; then
+            echo ""
+            echo "::error::Some files need reformatting."
+            echo "Fix it locally with two commands:"
+            echo "    pip install ruff"
+            echo "    ruff format ."
+            echo "Then commit the changes. This is a mechanical fix, nothing is wrong with your logic."
+            exit 1
+          fi
+
+      - name: Lint
+        run: ruff check . --output-format=github
