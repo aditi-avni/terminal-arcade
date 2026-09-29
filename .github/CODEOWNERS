@@ -1,0 +1,20 @@
+# Maintainers for terminal-arcade.
+#
+# Anyone listed here is automatically requested for review when a matching file
+# changes. This is what gives the 48-hour review promise an actual owner rather
+# than "someone will get to it".
+#
+# A handle only works if that person has write access to this repo AND has
+# accepted the invitation. Check Settings → Collaborators.
+
+# Everything, by default
+*                       @pushpam2404 @RustyLegend @vishal-vetcha @Prashansure
+
+# CI and contribution policy — these decide what "passing" means, so they get
+# a narrower set of reviewers.
+/.github/               @pushpam2404
+/CONTRIBUTING.md        @pushpam2404
+/CODE_OF_CONDUCT.md     @pushpam2404
+
+# The games themselves are the safest place for a newer maintainer to review
+/arcade/games/          @pushpam2404 @RustyLegend @vishal-vetcha @Prashansure

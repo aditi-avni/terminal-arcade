@@ -48,4 +48,6 @@ Maintainers may take any action they judge appropriate:
 3. **A temporary ban** — from the repos and community spaces
 4. **A permanent ban** — for serious or repeated violations
 
+---
+
 Attribution: adapted from the [Contributor Covenant](https://www.contributor-covenant.org), v2.1.
