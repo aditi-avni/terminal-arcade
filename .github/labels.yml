@@ -68,6 +68,9 @@
 - name: "status: blocked"
   color: "000000"
   description: "Waiting on something else"
+- name: "needs-human-review"
+  color: "D93F0B"
+  description: "Auto-merge held back — a maintainer must read this one"
 
 # --- Anti-spam ---
 - name: "invalid"

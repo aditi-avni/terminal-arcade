@@ -18,7 +18,7 @@ You need **Python 3.10 or newer**. Nothing else — no `pip install`, no
 dependencies, no setup.
 
 ```bash
-git clone https://github.com/github-community-gitam/terminal-arcade.git
+git clone https://github.com/pushpam2404/terminal-arcade.git
 cd terminal-arcade
 python3 -m arcade
 ```

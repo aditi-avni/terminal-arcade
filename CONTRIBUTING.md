@@ -30,7 +30,7 @@ git clone https://github.com/YOUR-USERNAME/terminal-arcade.git
 cd terminal-arcade
 
 # 2. Point at the original repo so you can stay up to date
-git remote add upstream https://github.com/github-community-gitam/terminal-arcade.git
+git remote add upstream https://github.com/pushpam2404/terminal-arcade.git
 
 # 3. There is no step 3. There is nothing to install.
 
