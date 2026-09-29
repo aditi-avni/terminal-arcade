@@ -50,6 +50,45 @@ python3 -m arcade
 
 ---
 
+## Where to look, and what to ignore
+
+A repository looks like a lot of folders the first time you open one. Almost
+none of them are yours to worry about. Here is the honest breakdown.
+
+### 🎯 Your work goes here
+
+| Folder | What is in it |
+|---|---|
+| **`arcade/games/`** | **One file per game.** Nearly every beginner issue is "add a game" or "fix a game", and it happens in exactly one file in this folder. If you only ever open one directory in this repo, open this one. |
+| `arcade/` | The shared bits every game uses — the menu (`main.py`), the ASCII art (`art.py`), asking the player questions (`input_utils.py`), high scores (`scoreboard.py`). Intermediate issues live here. |
+| `tests/` | The automated tests. Some issues ask you to add one; `tests/test_<name>.py` matches `arcade/<name>.py`. |
+
+### 📖 Worth reading, not editing
+
+| File | Why |
+|---|---|
+| **`docs/how-to-add-a-game.md`** | The single most useful file in the repo. Follow it start to finish and you have a merged PR. |
+| `docs/architecture.md` | How the pieces fit together. Read it when you get curious, not before. |
+| `CONTRIBUTING.md` | The workflow: claim an issue, branch, commit, open a PR. |
+
+### 🙈 Safe to ignore completely
+
+You will never need to touch any of these, and nothing in your issue will
+require it.
+
+| Thing | What it actually is |
+|---|---|
+| `.github/` | Robots. The checks that run on your PR, the issue templates, the bot that assigns you an issue when you comment `/claim`. Maintainer territory. |
+| `ruff.toml`, `pyproject.toml` | Settings for the code checker. |
+| `.gitignore` | A list of files Git should not track. |
+| `LICENSE`, `SECURITY.md`, `CODE_OF_CONDUCT.md` | Standard paperwork every open source project carries. |
+| `.pytest_cache/`, `.ruff_cache/`, `__pycache__/` | Junk your own computer generates when you run the tests. Already ignored by Git. |
+
+**The short version:** open an issue, it tells you the file. That file is
+almost always in `arcade/games/`. Everything else is scenery.
+
+---
+
 ## 🎃 Contributing — read this bit
 
 **This repository exists so you can make your first pull request.** That is not
@@ -77,7 +116,10 @@ we will fix it.
 
 ---
 
-## Project layout
+## Full file tree, for reference
+
+Everything marked *ignore* is infrastructure. It is listed only so that nothing
+in the repo looks mysterious.
 
 ```
 terminal-arcade/
@@ -87,12 +129,37 @@ terminal-arcade/
 │   ├── art.py           # ASCII banners and colours
 │   ├── input_utils.py   # asking the player questions
 │   ├── scoreboard.py    # high scores
-│   └── games/           # one file per game — add yours here
-├── tests/               # pytest
-└── docs/
-    ├── how-to-add-a-game.md   # start here
-    └── architecture.md
+│   └── games/           # ← one file per game. YOUR WORK GOES HERE
+├── tests/               # pytest — some issues ask you to add one
+├── docs/
+│   ├── how-to-add-a-game.md   # ← read this first
+│   └── architecture.md
+│
+├── .github/             # ignore — CI checks, issue templates, bots
+├── ruff.toml            # ignore — code-checker settings
+├── pyproject.toml       # ignore — packaging metadata
+├── .gitignore           # ignore
+├── LICENSE              # ignore — MIT
+├── SECURITY.md          # ignore
+└── CODE_OF_CONDUCT.md   # ignore
 ```
+
+## What CI checks, and what can actually stop your PR
+
+Two things, and only two:
+
+| Blocks the merge | Why |
+|---|---|
+| **A test fails** | Something in `tests/` broke. |
+| **A real bug is found** | An undefined variable, an unused import, a mutable default argument — code that is genuinely wrong. |
+
+Everything else is advice. **Formatting never blocks you** — untidy spacing,
+single quotes instead of double, imports in the wrong order, a missing newline
+at the end of a file. Those appear as suggestions in the log and are ignored by
+the gate. Your pull request merges either way.
+
+This is deliberate. Nobody's first contribution should be rejected by a robot
+over four spaces of whitespace.
 
 ## Running the tests
 

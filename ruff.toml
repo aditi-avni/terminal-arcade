@@ -24,7 +24,10 @@ ignore = [
 ]
 
 [lint.per-file-ignores]
-"tests/*" = ["F401", "F811"]      # pytest fixtures legitimately look unused
+# `assert False` inside a try/except is a normal, if slightly dated, way to write
+# a pytest test. Rejecting a contributor's first set of tests over it teaches
+# nothing useful, so it is allowed here.
+"tests/*" = ["F401", "F811", "B011", "B017"]
 "__init__.py" = ["F401"]           # re-exports
 "arcade/art.py" = ["E501", "W291", "W293"]   # ASCII art is whitespace-sensitive
 

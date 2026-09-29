@@ -121,16 +121,29 @@ python3 -m pytest        # all tests must pass
 python3 -m arcade        # and play your change, actually play it
 ```
 
-If you have ruff installed (optional):
+If you have ruff installed (entirely optional):
 
 ```bash
 python3 -m pip install ruff
-ruff format .
-ruff check .
+ruff format .          # tidies spacing and quotes
+ruff check . --fix     # fixes what it safely can
 ```
 
-CI runs exactly these. Running them locally takes 10 seconds and saves a round
-trip.
+### What can actually fail your pull request
+
+Only two things:
+
+1. **A test fails** — something in `tests/` broke.
+2. **A real bug is found** — an undefined variable, an unused import, a mutable
+   default argument. The check names the file and the line.
+
+**Formatting never blocks you.** Untidy spacing, single quotes instead of
+double, imports in the wrong order, a missing newline at the end of a file —
+these show up as suggestions in the log and are then ignored. Your pull request
+merges either way.
+
+This is deliberate. A first contribution should not be rejected by a robot over
+four spaces of whitespace.
 
 ### 6. Open the pull request
 

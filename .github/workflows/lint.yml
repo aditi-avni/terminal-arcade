@@ -1,7 +1,18 @@
 # Terminal Arcade — lint
 #
-# Beginner-facing repo, so the messages matter as much as the checks. Every
-# failure says exactly which command to run locally to fix it.
+# Beginner-facing repo, so this workflow draws a hard line between two very
+# different kinds of problem:
+#
+#   BLOCKS THE MERGE  — real bugs. An undefined name, an unused import, a
+#                       mutable default argument. Things that would actually
+#                       break the arcade for someone playing it.
+#
+#   ADVICE ONLY       — style. Quote marks, blank lines, import order, a
+#                       missing newline at the end of a file. A reviewer can
+#                       mention these; CI will not reject your work over them.
+#
+# This mirrors how most real open source projects behave. Nobody's first
+# contribution should be rejected by a robot over four spaces of whitespace.
 name: Lint
 
 on:
@@ -31,17 +42,40 @@ jobs:
       - name: Install ruff
         run: pip install --quiet ruff
 
-      - name: Check formatting
+      # ------------------------------------------------------------------
+      # The only step that can turn this check red.
+      #   F = pyflakes   — undefined names, unused imports, f-strings with
+      #                    no placeholders, duplicate function definitions
+      #   B = bugbear    — mutable default arguments, except-without-raise,
+      #                    loop variables captured by closures
+      # Both catch code that is genuinely wrong, not code that is untidy.
+      # ------------------------------------------------------------------
+      - name: Real bugs (this one blocks the merge)
         run: |
-          if ! ruff format --diff .; then
+          if ! ruff check . --select F,B --output-format=github; then
             echo ""
-            echo "::error::Some files need reformatting."
-            echo "Fix it locally with two commands:"
-            echo "    pip install ruff"
-            echo "    ruff format ."
-            echo "Then commit the changes. This is a mechanical fix, nothing is wrong with your logic."
+            echo "::error::Found something that looks like a real bug, not a style issue."
+            echo "Read the annotations above — each one names the file, the line, and the rule."
+            echo "If you think the check is wrong, say so in a comment on your PR and a"
+            echo "maintainer will take a look. You will not be penalised for arguing with it."
             exit 1
           fi
 
-      - name: Lint
-        run: ruff check . --output-format=github
+      # ------------------------------------------------------------------
+      # Everything below is advice. continue-on-error means a failure here
+      # is reported and then ignored — the job still ends green.
+      # ------------------------------------------------------------------
+      - name: Style suggestions (advice only, never blocks)
+        continue-on-error: true
+        run: |
+          echo "These are suggestions. Your pull request can be merged either way."
+          echo ""
+          ruff check . --select E,I,UP --output-format=concise || true
+          echo ""
+          ruff format --diff . || true
+          echo ""
+          echo "Want to apply all of the above in one go?"
+          echo "    pip install ruff"
+          echo "    ruff format ."
+          echo "    ruff check . --fix"
+          echo "Entirely optional."
