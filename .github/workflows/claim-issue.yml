@@ -98,6 +98,6 @@ jobs:
               `2. \`git checkout -b fix/short-description\`\n` +
               `3. Make the change, commit, push\n` +
               `4. Open a PR with \`Closes #${issue_number}\` in the description\n\n` +
-              `If you get stuck, comment here or ask in Discord. If you change your ` +
+              `If you get stuck, comment here saying what you have tried. If you change your ` +
               `mind, comment \`/unclaim\` — no hard feelings, that is genuinely fine.`
             );

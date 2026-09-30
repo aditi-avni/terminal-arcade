@@ -1,8 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Ask a question in Discord
-    url: https://discord.gg/REPLACE_WITH_INVITE
-    about: Setup help, Git errors, "is this issue still open?" — ask here, not in an issue.
   - name: How to contribute
     url: ../../blob/main/CONTRIBUTING.md
     about: Read this before opening your first pull request.

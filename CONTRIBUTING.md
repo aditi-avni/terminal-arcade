@@ -1,7 +1,6 @@
 # Contributing to Terminal Arcade
 
-Thanks for being here. This repository is part of **GITHUB Community GITAM** and
-is participating in **Hacktoberfest 2026**. Whether this is your first pull
+Thanks for being here. This repository is part of **GITHUB Community GITAM**. Whether this is your first pull
 request ever or your hundredth, the guide below is everything you need.
 
 **If this is your first time:** the single best place to start is
@@ -163,7 +162,7 @@ faster than anything else you can do.
 
 A maintainer responds within **48 hours**:
 
-- **Approved and merged** — we add `hacktoberfest-accepted`. Done
+- **Approved and merged** — done
 - **Changes requested** — we leave comments pointing at exact lines. Push more
   commits to the same branch; the PR updates itself. This is normal and happens
   to experienced developers constantly. It is not criticism
@@ -178,7 +177,7 @@ apply to everyone equally.
 
 ### Automatically rejected
 
-Marked `invalid` / `spam` and excluded from Hacktoberfest:
+Marked `invalid` / `spam` and closed without review:
 
 - Whitespace, comma, or formatting-only changes to Markdown files
 - Adding your name or a link to the README without being asked to

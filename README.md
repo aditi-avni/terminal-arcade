@@ -4,7 +4,6 @@
 Built as a friendly place to make your first ever pull request.</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Hacktoberfest-2026-FF8AE2" alt="Hacktoberfest 2026">
   <img src="https://img.shields.io/badge/python-3.10%2B-blue" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/dependencies-none-1F883D" alt="No dependencies">
   <img src="https://img.shields.io/badge/license-MIT-lightgrey" alt="MIT">
@@ -188,7 +187,7 @@ Maintained by **OS & DevX**, GITHUB Community GITAM.
 
 | Date | Event |
 |---|---|
-| Mon, Oct 5 | Hacktoberfest Kickoff & Live PR Lab |
+| Mon, Oct 5 | Open Source Kickoff & Live PR Lab |
 | Mon, Oct 12 | PR Debug Clinic #1 — bring a broken branch |
 | Wed, Oct 21 | PR Debug Clinic #2 |
 

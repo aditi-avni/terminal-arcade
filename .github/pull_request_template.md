@@ -1,5 +1,5 @@
 <!--
-  GITHUB Community GITAM — Hacktoberfest 2026
+  GITHUB Community GITAM
   Please fill this in. PRs that leave it blank are closed without review.
 -->
 
@@ -41,4 +41,4 @@ Closes #
 
 ---
 
-<sub>First time here? Read [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md). Stuck? Ask in the community Discord — maintainers reply within 48 hours.</sub>
+<sub>First time here? Read [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md). Stuck? Comment on your issue saying what you have tried — a maintainer replies within 48 hours.</sub>

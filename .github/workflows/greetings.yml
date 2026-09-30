@@ -30,14 +30,14 @@ jobs:
             A maintainer will get to this within **48 hours**. In the meantime:
             - Read [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md)
             - Want to work on something? Find an issue labelled `good first issue` and comment `/claim` on it
-            - Stuck on setup? Ask in our Discord, that is what it is for
+            - Stuck on setup? Comment on the issue saying what you have tried. Asking is not failing
           pr-message: |
             Congratulations on your first pull request to this repository.
 
             Here is what happens next:
             1. The checks below need to go green. If one is red, click **Details** to see why — that is normal, and fixing it is part of the work
             2. A maintainer reviews within **48 hours** and may leave line comments
-            3. Once it is approved, we label it `hacktoberfest-accepted` and merge
+            3. Once it is approved, a maintainer merges it
 
             Two things that get PRs closed, so please double-check:
             - No `Closes #<issue>` in the description
