@@ -198,7 +198,8 @@ Marked `invalid` / `spam` and closed without review:
 ### The 48-hour maintainer commitment
 
 We commit to acknowledging every PR within 48 hours. If yours has been sitting
-longer, ping us in Discord — you are not being annoying, we dropped the ball.
+longer, say so in a comment on the pull request — you are not being annoying,
+we dropped the ball.
 
 ---
 
@@ -219,7 +220,7 @@ longer, ping us in Discord — you are not being annoying, we dropped the ball.
 1. Re-read the issue — the answer is often in "How to verify locally"
 2. Read `arcade/games/guess.py`, the simplest game in the project
 3. Comment on the issue and tag the mentor listed on it
-4. Ask in Discord
+4. Say what you have already tried — that alone often surfaces the answer
 5. Come to a **PR Debug Clinic** (Oct 12, Oct 21) and we will sit with you
 
 Useful when Git misbehaves:
