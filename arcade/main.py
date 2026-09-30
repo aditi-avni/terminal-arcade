@@ -51,18 +51,11 @@ def run_game(game: ModuleType) -> None:
     print()
     score = game.play()
 
-    while True:
-        if score and score > 0:
-            if confirm("  Save this score to the scoreboard?"):
-                name = ask("  Your name:").strip() or "anonymous"
-                scoreboard.save_score(game.NAME, name, score)
-                print(art.green("  Saved.\n"))
-                pause()
-
-        if confirm("  Want to play again?"):
-            score = game.play()
-        else:
-            break
+    if score and score > 0:
+        if confirm("  Save this score to the scoreboard?"):
+            name = ask("  Your name:").strip() or "anonymous"
+            scoreboard.save_score(game.NAME, name, score)
+            print(art.green("  Saved.\n"))
 
 
 def main() -> None:
